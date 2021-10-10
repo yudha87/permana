@@ -1,3 +1,17 @@
-baseURL = "http://example.org/"
+baseURL = ""
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "GBI JPPM"
+assetsDir = "assets"
+publishDir = "public"
+DefaultContentLanguage = "id"
+
+[languages]
+    [languages.id]
+        languageName = "Bahasa Indonesia"
+        title = "Beranda"
+        weight = 1
+
+    [languages.en]
+        languageName = "English"
+        title = "Home"
+        weight = 2

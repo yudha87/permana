@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{ $logo := resources.Get "images/logo-kawanuaid-white-250.png" }}
+    <div class="container">
+        <div class="col">
+            <a href="https://kid.or.id" target="_blank" rel="noopener noreferrer">
+                <img src="{{ $logo.Permalink }}" alt="Logo Kawanua ID">
+            </a>
+        </div>
+        <div class="col">
+            <ul class="nav justify-content-end">
+                {{ range $.Site.Home.AllTranslations }}
+                <li class="nav-item">
+                    <a href="{{ .Permalink }}" class="nav-link">{{ .Language.LanguageName }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true" class="rounded-lg bg-light px-5 py-4 needs-validation" novalidate>
+        <div class="form-group">    
+          <label class="col-form-label col-form-label-lg" for="role">{{ i18n "form_topic" }}</label>
+          <select class="custom-select custom-select-lg" name="role[]" required>
+            <option value="general">General Support</option>
+            <option value="abuse">Abuse Report</option>
+            <option value="dmca">DMCA/Takedown</option>
+          </select>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <label class="col-form-label col-form-label-lg" for="name">{{ i18n "form_name" }}</label>
+            <input class="form-control form-control-lg" type="text" name="name" required />
+          </div>
+          <div class="col">
+            <label class="col-form-label col-form-label-lg"  for="email">{{ i18n "form_email" }}</label>
+            <input class="form-control form-control-lg" type="email" name="email" required />
+          </div>
+        </div>
+        <div class="form-group">    
+          <label class="col-form-label col-form-label-lg" for="subject">{{ i18n "form_subject" }}</label>
+          <input class="form-control form-control-lg" type="text" name="subject" required />
+        </div>
+        <div class="form-group">    
+          <label class="col-form-label col-form-label-lg" for="message">{{ i18n "form_message" }}</label>
+          <textarea class="form-control form-control-lg" name="message" required></textarea>
+        </div>
+        <div data-netlify-recaptcha="true"></div>
+        <div class="form-group">    
+          <button class="btn btn-primary btn-lg my-3" type="submit">{{ i18n "form_button" }}</button>
+        </div>
+      </form>
+    </div>
+{{ end }}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - GBI JPPM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://font.my.id/libs/inter/3.13/inter.css">
+    {{ $main := resources.Get "styles/main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $main.Permalink }}">
+    {{ $favicon := resources.Get "images/favicon.png" }}
+    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/png">
+</head>
+<body class="bg-dark my-5">
+    {{ block "main" .}}{{ end }}
+</body>
+</html>
