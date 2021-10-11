@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://font.my.id/libs/inter/3.13/inter.css">
     {{ $main := resources.Get "styles/main.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $main.Permalink }}">
-    {{ $favicon := resources.Get "images/favicon.png" }}
+    {{ $favicon := resources.Get "images/gbi-logo-6931365460.png" }}
     <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/png">
 </head>
 <body class="bg-dark my-5">
