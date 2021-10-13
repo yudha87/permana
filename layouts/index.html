@@ -2,9 +2,7 @@
 {{ $logo := resources.Get "images/gbi-logo-6931365460.png" }}
     <div class="container">
         <header class="col text-center">
-            <a href="https://gbijppm.my.id" target="_blank" rel="noopener noreferrer">
-                <img src="{{ $logo.Permalink }}" alt="Logo GBI">
-            </a>
+            <img src="{{ $logo.Permalink }}" alt="Logo GBI">
             <h1 class="text-white">{{ $.Param "nameLong" }}</h1>
         </header>
         <!-- <div class="col">
@@ -16,26 +14,26 @@
                 {{ end }}
             </ul>
         </div> -->
-        <div class="px-5 py-4">
+        <div class="col py-5">
           <div class="list-group rounded-lg bg-white text-center">
-            <a href="https://www.pusatperakitan.org" class="p-4 list-group-item list-group-item-action" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.pusatperakitan.org" class="p-4 list-group-item list-group-item-action" rel="noopener noreferrer">
               <i class="fas fa-globe fa-lg"></i> Website
             </a>
-            <a href="https://www.facebook.com/groups/167805773238639/" class="p-4 list-group-item list-group-item-action" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/groups/167805773238639/" class="p-4 list-group-item list-group-item-action" rel="noopener noreferrer">
               <i class="fab fa-facebook fa-lg"></i> Facebook
             </a>
-            <a href="https://www.youtube.com/channel/UCByCsES4otf_zLkw-WinIkQ" class="p-4 list-group-item list-group-item-action" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/channel/UCByCsES4otf_zLkw-WinIkQ" class="p-4 list-group-item list-group-item-action" rel="noopener noreferrer">
               <i class="fab fa-youtube fa-lg"></i> Youtube</a>
-            <a href="https://www.instagram.com/gbijppm/" class="p-4 list-group-item list-group-item-action" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/gbijppm/" class="p-4 list-group-item list-group-item-action" rel="noopener noreferrer">
               <i class="fab fa-instagram fa-lg"></i> Instagram
               <span class="badge rounded-pill bg-info"><small>BARU</small></span>
             </a>
-            <a href="#!" class="p-4 list-group-item disabled" target="_blank" rel="noopener noreferrer">
+            <a href="#!" class="p-4 list-group-item disabled" rel="noopener noreferrer">
               <i class="fab fa-tiktok fa-lg"></i> TikTok 
               <span class="badge rounded-pill bg-secondary"><small>COMING SOON</small></span></a>
           </div>
         </div>
-        <footer class="px-5 py-1">
+        <footer class="col py-1">
           <p class="text-white text-center">
             © 2021 <span class="fw-bold">{{ $.Param "nameShort" }}</span>.
           </p>
