@@ -7,11 +7,15 @@ DefaultContentLanguage = "id"
 
 [languages]
     [languages.id]
+        nameLong = "GBI Jemaat Pusat Perakitan Manado"
+        nameShort = "GBI JPPM"
         languageName = "Bahasa Indonesia"
         title = "Beranda"
         weight = 1
 
     [languages.en]
+        nameLong = "GBI Jemaat Pusat Perakitan Manado"
+        nameShort = "GBI JPPM"
         languageName = "English"
         title = "Home"
         weight = 2

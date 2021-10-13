@@ -1,2 +1,3 @@
 *.sh
 public/*
+node_modules/*
