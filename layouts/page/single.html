@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@{{ .Page.Title }} ― {{ $.Param "nameShort" }}</title>
+    {{ $main := resources.Get "styles/main.scss" }}
+    {{ $theme := resources.Get .Params.stylesheet }}
+    {{ $globalCSS := slice $main $theme | resources.Concat "styles/page.scss" }}
+    {{ $gabunganCSS := $globalCSS }}
+    {{ $stylesheet := $gabunganCSS | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
+    <link rel="shortcut icon" href="{{ .Params.avatarsrc }}" type="image/png">
+</head>
+<body class="bg-dark my-5">
+    <div class="container">
+        <header class="col text-center">
+            <img src="{{ .Params.avatarsrc }}" alt="Logo GBI">
+            <h1 class="text-white fs-1">{{ .Params.judul }}</h1>
+        </header>
+        <!-- <div class="col">
+            <ul class="nav justify-content-end">
+                {{ range $.Site.Home.AllTranslations }}
+                <li class="nav-item">
+                    <a href="{{ .Permalink }}" class="nav-link">{{ .Language.LanguageName }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div> -->
+        {{ .Content }}
+        <footer class="col py-1">
+            <p class="text-white text-center">
+            <small>
+                <i class="fas fa-copyright fa-md pe-1"></i> 2021 ― <span class="fw-bold">{{ $.Param "nameShort" }}</span>.
+            </small>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

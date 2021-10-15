@@ -1,21 +1,21 @@
 baseURL = ""
 languageCode = "en-us"
-title = "GBI JPPM"
+title = "BIT.MY.ID"
 assetsDir = "assets"
 publishDir = "public"
 DefaultContentLanguage = "id"
 
 [languages]
     [languages.id]
-        nameLong = "GBI Jemaat Pusat Perakitan Manado"
-        nameShort = "GBI JPPM"
+        nameLong = "BIT.MY.ID"
+        nameShort = "BITMYID"
         languageName = "Bahasa Indonesia"
         title = "Beranda"
         weight = 1
 
     [languages.en]
-        nameLong = "GBI Jemaat Pusat Perakitan Manado"
-        nameShort = "GBI JPPM"
+        nameLong = "BIT.MY.ID"
+        nameShort = "BITMYID"
         languageName = "English"
         title = "Home"
         weight = 2
