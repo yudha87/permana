@@ -10,12 +10,12 @@
     {{ $gabunganCSS := $globalCSS }}
     {{ $stylesheet := $gabunganCSS | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
-    <link rel="shortcut icon" href="{{ .Params.avatarsrc }}" type="image/png">
+    <link rel="shortcut icon" href="{{ .Params.avatarsrc }}" type="image/jpg">
 </head>
 <body class="bg-dark my-5">
     <div class="container">
         <header class="col text-center">
-            <img src="{{ .Params.avatarsrc }}" alt="Logo GBI">
+            <img src="{{ .Params.avatarsrc }}" alt="Avatar">
             <h1 class="text-white fs-1">{{ .Params.judul }}</h1>
         </header>
         <!-- <div class="col">

@@ -2,7 +2,7 @@
 {{ $logo := resources.Get "images/gbi-logo-6931365460.png" }}
     <div class="container">
         <header class="col text-center">
-            <img src="{{ $logo.Permalink }}" alt="Logo GBI">
+            <!-- <img src="{{ $logo.Permalink }}" alt="Logo GBI"> -->
             <h1 class="text-white fs-1">{{ $.Param "nameLong" }}</h1>
         </header>
         <!-- <div class="col">
@@ -14,7 +14,7 @@
                 {{ end }}
             </ul>
         </div> -->
-        <div class="col py-5">
+        <!-- <div class="col py-5">
           <div class="shadow list-group rounded-lg bg-white text-center">
             <a href="https://www.pusatperakitan.org" class="p-4 list-group-item list-group-item-action" rel="noopener noreferrer">
               <i class="fas fa-desktop fa-lg pe-2"></i> Website
@@ -37,11 +37,11 @@
               <span class="badge rounded-pill bg-secondary ps-1"><small>COMING SOON</small></span></a>
             </a>
           </div>
-        </div>
+        </div> -->
         <footer class="col py-1">
           <p class="text-white text-center">
             <small>
-              <i class="fas fa-copyright fa-md pe-1"></i> 2021 ― <span class="fw-bold">Tim Multimedia {{ $.Param "nameShort" }}</span>.
+              <i class="fas fa-copyright fa-md pe-1"></i> 2021 ― <span class="fw-bold">{{ $.Param "nameShort" }}</span>.
             </small>
           </p>
         </footer>

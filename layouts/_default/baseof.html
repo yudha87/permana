@@ -10,7 +10,7 @@
     {{ $gabunganCSS := $globalCSS }}
     {{ $stylesheet := $gabunganCSS | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
-    {{ $favicon := resources.Get "images/gbi-logo-6931365460.png" }}
+    {{ $favicon := resources.Get "images/favicon.png" }}
     <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/png">
 </head>
 <body class="bg-dark my-5">
