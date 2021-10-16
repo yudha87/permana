@@ -18,8 +18,20 @@
         <header class="col text-white text-center">
             <img src="{{ .Params.avatarsrc }}" alt="Avatar {{ .Params.nama }}">
             <h1 class="fs-1">{{ .Params.nama }}</h1>
-            <p class="">
-                <i class="fas fa-envelope fa-md pe-2"></i> {{ .Params.email }}
+            <p>
+                {{ if .Params.email }}
+                <span class="pe-4">
+                    <i class="fas fa-envelope fa-md pe-2"></i> {{ .Params.email }}
+                </span>
+                {{ else }}
+                {{ end }}
+
+                {{ if .Params.chat }}
+                <span class="">
+                    <i class="fab fa-telegram fa-md pe-2"></i> <a href="https://{{ .Params.chat }}" target="_blank" rel="noopener noreferrer">{{ .Params.chat }}</a>
+                </span>
+                {{ else }}
+                {{ end }}
             </p>
         </header>
         <!-- <div class="col">
