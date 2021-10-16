@@ -10,13 +10,17 @@
     {{ $gabunganCSS := $globalCSS }}
     {{ $stylesheet := $gabunganCSS | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
-    <link rel="shortcut icon" href="{{ .Params.avatarsrc }}" type="image/jpg">
+    {{ $avatar := resources.Get .Params.avatarsrc }}
+    <link rel="shortcut icon" href="{{ $avatar.Permalink }}" type="image/jpg">
 </head>
 <body class="bg-dark my-5">
     <div class="container">
-        <header class="col text-center">
-            <img src="{{ .Params.avatarsrc }}" alt="Avatar">
-            <h1 class="text-white fs-1">{{ .Params.judul }}</h1>
+        <header class="col text-white text-center">
+            <img src="{{ .Params.avatarsrc }}" alt="Avatar {{ .Params.nama }}">
+            <h1 class="fs-1">{{ .Params.nama }}</h1>
+            <p class="">
+                <i class="fas fa-envelope fa-md pe-2"></i> {{ .Params.email }}
+            </p>
         </header>
         <!-- <div class="col">
             <ul class="nav justify-content-end">

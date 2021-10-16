@@ -1,9 +1,9 @@
 {{ define "main" }}
-{{ $logo := resources.Get "images/gbi-logo-6931365460.png" }}
+{{ $logo := resources.Get "images/logo-color-512-01.svg" }}
     <div class="container">
-        <header class="col text-center">
-            <!-- <img src="{{ $logo.Permalink }}" alt="Logo GBI"> -->
-            <h1 class="text-white fs-1">{{ $.Param "nameLong" }}</h1>
+        <header class="col text-white text-center">
+            <img class="py-4" src="{{ $logo.Permalink }}" alt="Logo">
+            <h1 class="fs-3">Claim your own</h1>
         </header>
         <!-- <div class="col">
             <ul class="nav justify-content-end">
@@ -14,8 +14,11 @@
                 {{ end }}
             </ul>
         </div> -->
-        <!-- <div class="col py-5">
-          <div class="shadow list-group rounded-lg bg-white text-center">
+        <main class="col text-white text-center py-1">
+          <p class="fs-1">
+            <span class="fw-thin">bit.my.id/</span><span class="fw-bolder">yourname</span>
+          </p>
+          <!-- <div class="shadow list-group rounded-lg bg-white text-center">
             <a href="https://www.pusatperakitan.org" class="p-4 list-group-item list-group-item-action" rel="noopener noreferrer">
               <i class="fas fa-desktop fa-lg pe-2"></i> Website
             </a>
@@ -36,9 +39,9 @@
               <i class="fab fa-tiktok fa-lg pe-2"></i> TikTok 
               <span class="badge rounded-pill bg-secondary ps-1"><small>COMING SOON</small></span></a>
             </a>
-          </div>
-        </div> -->
-        <footer class="col py-1">
+          </div> -->
+        </main>
+        <footer class="col py-2">
           <p class="text-white text-center">
             <small>
               <i class="fas fa-copyright fa-md pe-1"></i> 2021 ― <span class="fw-bold">{{ $.Param "nameShort" }}</span>.

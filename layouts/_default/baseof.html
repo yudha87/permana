@@ -10,8 +10,8 @@
     {{ $gabunganCSS := $globalCSS }}
     {{ $stylesheet := $gabunganCSS | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
-    {{ $favicon := resources.Get "images/favicon.png" }}
-    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/png">
+    {{ $favicon := resources.Get "images/logo-color-512-01.svg" }}
+    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/svg">
 </head>
 <body class="bg-dark my-5">
     {{ block "main" .}}{{ end }}
