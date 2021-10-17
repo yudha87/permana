@@ -4,6 +4,7 @@ title = "BIT.MY.ID"
 assetsDir = "assets"
 publishDir = "public"
 DefaultContentLanguage = "id"
+disableKinds = ["taxonomyTerm"]
 
 [languages]
     [languages.id]
