@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Title }} ― {{ $.Param "nameShort" }}</title>
+    {{ $options := (dict "targetPath" "css/global.css" "outputStyle" "compressed" "enableSourceMap" true) }}
     {{ $main := resources.Get "styles/main.scss" }}
     {{ $theme := resources.Get "styles/darksolid.scss" }}
     {{ $globalCSS := slice $main $theme | resources.Concat "styles/global.scss" }}
     {{ $gabunganCSS := $globalCSS }}
-    {{ $stylesheet := $gabunganCSS | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
+    {{ $stylesheet := $gabunganCSS | toCSS $options | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $stylesheet.Permalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
     {{ $favicon := resources.Get "images/logo-color-512-01.svg" }}
     <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/svg">
 </head>

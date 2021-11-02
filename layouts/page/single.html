@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@{{ .Page.Title }} ― {{ $.Param "nameShort" }}</title>
+    {{ $options := (dict "targetPath" "css/page.css" "outputStyle" "compressed" "enableSourceMap" true) }}
     {{ $main := resources.Get "styles/main.scss" }}
     {{ $theme := resources.Get .Params.stylesheet }}
     {{ $globalCSS := slice $main $theme | resources.Concat "styles/page.scss" }}
     {{ $gabunganCSS := $globalCSS }}
-    {{ $stylesheet := $gabunganCSS | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $stylesheet.Permalink }}">
-    {{ $avatar := resources.Get .Params.avatarsrc }}
-    <link rel="shortcut icon" href="{{ $avatar.Permalink }}" type="image/jpg">
+    {{ $stylesheet := $gabunganCSS | toCSS $options | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $stylesheet.Permalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+    {{ $favicon := resources.Get .Params.faviconsrc }}
+    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="{{ .Params.imgtype }}">
 </head>
 <body class="bg-dark my-5">
     <div class="container">
