@@ -12,7 +12,7 @@
     {{ $stylesheet := $gabunganCSS | toCSS $options | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
     {{ $favicon := resources.Get "images/logo-color-512-01.svg" }}
-    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/svg">
+    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/svg+xml">
 </head>
 <body class="bg-dark my-5">
     {{ block "main" .}}{{ end }}
