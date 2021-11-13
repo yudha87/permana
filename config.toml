@@ -1,6 +1,6 @@
-baseURL = ""
+baseURL = "/"
 languageCode = "en-us"
-title = "BIT.MY.ID"
+title = "BIT-MY-ID"
 assetsDir = "assets"
 publishDir = "public"
 DefaultContentLanguage = "id"
@@ -8,15 +8,19 @@ disableKinds = ["taxonomyTerm"]
 
 [languages]
     [languages.id]
-        nameLong = "BIT.MY.ID"
+        nameLong = "BIT-MY-ID"
         nameShort = "BITMYID"
+        slogan = "Buat Bio Link Anda GRATIS"
         languageName = "Bahasa Indonesia"
+        description = "Buat Bio Link Anda secara GRATIS"
         title = "Beranda"
         weight = 1
 
     [languages.en]
-        nameLong = "BIT.MY.ID"
+        nameLong = "BIT-MY-ID"
         nameShort = "BITMYID"
+        slogan = "Create Your Own Bio Link FREE"
         languageName = "English"
+        description = "Create Your Own Bio Link FREE"
         title = "Home"
         weight = 2

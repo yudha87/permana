@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@{{ .Page.Title }} ― {{ $.Param "nameShort" }}</title>
-    {{ $options := (dict "targetPath" "css/page.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+    <link rel="description" content="{{ .Params.description }}">
+    {{ $options := (dict "targetPath" "css/page.css" "outputStyle" "compressed" "enableSourceMap" false) }}
     {{ $main := resources.Get "styles/main.scss" }}
     {{ $theme := resources.Get .Params.stylesheet }}
     {{ $globalCSS := slice $main $theme | resources.Concat "styles/page.scss" }}
@@ -12,12 +13,13 @@
     {{ $stylesheet := $gabunganCSS | toCSS $options | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
     {{ $favicon := resources.Get .Params.faviconsrc }}
-    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="{{ .Params.imgtype }}">
+    <link rel="icon" href="{{ $favicon.Permalink | safeURL }}" type="{{ $favicon.MediaType.Type }}">
 </head>
 <body class="bg-dark my-5">
     <div class="container">
         <header class="col text-white text-center">
-            <img src="{{ .Params.avatarsrc }}" alt="Avatar {{ .Params.nama }}">
+            {{ $avatar := resources.Get .Params.avatarsrc }}
+            <img src="{{ $avatar.Permalink }}" alt="Avatar {{ .Params.nama }}">
             <h1 class="fs-1">{{ .Params.nama }}</h1>
             <p>
                 {{ if .Params.email }}

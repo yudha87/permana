@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} ― {{ $.Param "nameShort" }}</title>
+    <title>{{ $.Param "nameShort }} ― {{ $.Param "slogan" }}</title>
+    <link rel="description" content={{ $.Param "description" }} />
     {{ $options := (dict "targetPath" "css/global.css" "outputStyle" "compressed" "enableSourceMap" true) }}
     {{ $main := resources.Get "styles/main.scss" }}
     {{ $theme := resources.Get "styles/darksolid.scss" }}
@@ -12,7 +13,7 @@
     {{ $stylesheet := $gabunganCSS | toCSS $options | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
     {{ $favicon := resources.Get "images/logo-color-512-01.svg" }}
-    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/svg+xml">
+    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="$favicon.MediaType.Type">
 </head>
 <body class="bg-dark my-5">
     {{ block "main" .}}{{ end }}

@@ -1,6 +1,6 @@
 {
   "name": "gbijppm-bookmark",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KawanuaDev/gbijppm-bookmark.git"
+    "url": "git+https://github.com/KawanuaDev/bitmyid.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KawanuaDev/gbijppm-bookmark/issues"
+    "url": "https://github.com/KawanuaDev/bitmyid/issues"
   },
-  "homepage": "https://github.com/KawanuaDev/gbijppm-bookmark#readme",
+  "homepage": "https://github.com/KawanuaDev/bitmyid#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.1.3"
