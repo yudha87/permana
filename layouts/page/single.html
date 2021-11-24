@@ -18,8 +18,10 @@
 <body class="bg-dark my-5">
     <div class="container">
         <header class="col text-white text-center">
-            {{ $avatar := resources.Get .Params.avatarsrc }}
-            <img src="{{ $avatar.Permalink }}" alt="Avatar {{ .Params.nama }}">
+            <figure>
+                {{ $avatar := resources.Get .Params.avatarsrc }}
+                <img src="{{ $avatar.Permalink }}" alt="Avatar {{ .Params.nama }}">
+            </figure>
             <h1 class="fs-1">{{ .Params.nama }}</h1>
             <p>
                 {{ if .Params.email }}
