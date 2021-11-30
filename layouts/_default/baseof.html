@@ -13,9 +13,9 @@
     {{ $stylesheet := $gabunganCSS | toCSS $options | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $stylesheet.Permalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
     {{ $favicon := resources.Get "images/bitmyid-logo.svg" }}
-    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="$favicon.MediaType.Type">
+    <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="{{ $favicon.MediaType.Type }}">
 </head>
-<body class="bg-dark my-5">
+<body class="{{ if ne .Params.type "page" }}home{{ else }}{{ end }} bg-dark my-5">
     {{ block "main" .}}{{ end }}
     {{ if .Site.IsServer }}
     {{ else }}

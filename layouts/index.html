@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $logo := resources.Get "images/bitmyid-logo.svg" }}
-    <div class="container">
+    <div class="home-grid container">
         <header class="col text-white text-center">
             <img class="py-4" src="{{ $logo.Permalink }}" alt="Logo">
             <h1 class="fs-3">Claim your own</h1>
@@ -24,7 +24,8 @@
         <footer class="col py-2">
           <p class="text-white text-center">
             <small>
-              <i class="fas fa-copyright fa-md pe-1"></i> 2021 ― <span class="fw-bold">{{ $.Param "nameShort" }}</span>.
+              <i class="fas fa-copyright fa-md pe-1"></i> 2021 ― <span class="fw-bold">{{ $.Param "nameShort" }}</span>.<br />
+              Open source project dibawah <a href="https://kid.or.id" target="_blank" rel="noopener noreferrer">Kawanua Indie Developer</a>.
             </small>
           </p>
         </footer>

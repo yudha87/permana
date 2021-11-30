@@ -5,7 +5,7 @@
 Langkahnya sebagai berikut,
 
 1. Fork repository ini.
-1. Buat konten baru dengan perintah `hugo new content namalink.en.html` (untuk halaman Bahasa Inggris) dan `hugo new content namalink.id.html` (untuk Bahasa Indonesia).
+1. Buat konten baru dengan perintah `hugo new content namalink.en.html` (untuk halaman Bahasa Inggris) dan `hugo new content namalink.id.html` (untuk Bahasa Indonesia). Atau dengan cara manual, buat file baru bernama `namalink.en.html` dan `namalink.id.html` pada folder `/content`.
    > Ganti `namalink` sesuai selera. Nama file ini akan digunakan pada nama link nanti. Contoh: `https://bit.my.id/namalink`
 1. Edit isi file `namalink.en.html` dan `namalink.id.html` sesuai kebutuhan Anda. Mohon menyesuaikan dengan format yang sudah ada, untuk keseragaman.
 1. Selanjutnya taruh file **avatar** dan **favicon** milik Anda dalam path `/assets/images`. Perhatikan format nama file yang sudah ada.
