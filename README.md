@@ -1,5 +1,10 @@
 # bitmyid Bio Link
 
+## Mau Berkontribusi
+
+1. Fork repository ini.
+1. `git push` perubahan yang baru dilakukan, selanjutnya silahkan buka **Pull Request** baru.
+
 ## Cara Membuat Bio Link Milik Anda
 
 Langkahnya sebagai berikut,
